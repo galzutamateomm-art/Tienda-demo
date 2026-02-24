@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tienda online premium de productos de calidad. Compra con confianza y envío rápido.">
+    <meta name="keywords" content="tienda online, compra online, productos premium, ecommerce">
+    <meta name="author" content="Premium Store">
+    <title>Premium Store - Tu Tienda Online Premium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Premium Store</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#products" class="nav-link">Productos</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">Nosotros</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Descubre la Excelencia</h1>
+            <p class="hero-subtitle">Productos premium seleccionados especialmente para ti</p>
+            <a href="#products" class="cta-button">Explorar Catálogo</a>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se insertan aquí con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">✓</div>
+                    <h3>Calidad Garantizada</h3>
+                    <p>Los mejores productos del mercado con garantía de satisfacción</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">⚡</div>
+                    <h3>Envío Rápido</h3>
+                    <p>Entrega en 24-48 horas a toda la región</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">💬</div>
+                    <h3>Soporte Premium</h3>
+                    <p>Atención al cliente 24/7 vía WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Ponte en Contacto</h2>
+            <p class="contact-text">¿Tienes preguntas? Estamos aquí para ayudarte</p>
+            <a href="https://wa.me/549XXXXXXXXXX" target="_blank" class="whatsapp-button">
+                💬 Contactar por WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Premium Store. Todos los derechos reservados.</p>
+            <p>Diseñado con ❤️ para tu negocio</p>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="purchaseModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Completar Compra</h2>
+            <form id="purchaseForm">
+                <!-- Información del Producto -->
+                <div class="product-info">
+                    <img id="modalProductImage" src="" alt="Producto" class="modal-product-image">
+                    <div class="modal-product-details">
+                        <h3 id="modalProductName"></h3>
+                        <p class="price" id="modalProductPrice"></p>
+                    </div>
+                </div>
+
+                <!-- Datos Personales -->
+                <div class="form-group">
+                    <label for="fullName">Nombre Completo *</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Teléfono *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Método de Entrega -->
+                <div class="form-group">
+                    <label for="deliveryMethod">Método de Entrega *</label>
+                    <select id="deliveryMethod" name="deliveryMethod" required>
+                        <option value="">Seleccionar...</option>
+                        <option value="delivery">Envío a Domicilio</option>
+                        <option value="pickup">Retiro en Local</option>
+                    </select>
+                </div>
+
+                <!-- Campos Direccionales (Hidden por defecto) -->
+                <div id="deliveryFields" class="delivery-fields hidden">
+                    <div class="form-group">
+                        <label for="address">Dirección *</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">Ciudad *</label>
+                        <input type="text" id="city" name="city">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postalCode">Código Postal *</label>
+                        <input type="text" id="postalCode" name="postalCode">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Finalizar Compra</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal" id="confirmationModal">
+        <div class="modal-content confirmation-content">
+            <div class="confirmation-icon">✓</div>
+            <h2>¡Compra Confirmada!</h2>
+            <p>Tu orden ha sido registrada exitosamente</p>
+            <div class="order-details">
+                <p class="order-number" id="orderNumber"></p>
+                <p class="order-message">Te contactaremos próximamente para confirmar los detalles</p>
+            </div>
+            <button class="close-confirmation" id="closeConfirmation">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
